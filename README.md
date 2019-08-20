@@ -200,4 +200,27 @@ print('Time-optimal: ', stop_optimal - start_optimal)
 Sự khác biệt đã lớn hơn rồi.
 
 
+3. One-line code
+   Trong python-code có điều thú vị liên quan đến one-line code. Và dưới đây là 1line với bài toán fizzbuzz
+
+```Python
+for i in range(1,101): print("Fizz"*(i%3==0) + "Buzz"*(i%5==0) or i)
+```
+
+
+Thời gian chạy của cách làm này khá ấn tượng.
+
+>Time-simple:  0.003149918999952206
+
+>Time-optimal:  0.003027181999982531
+
+>Time-one-line:  0.0025488549999863608
+
+
+Để lý giải cho thời gian chạy này, chúng ta có thể tưởng tượng như sau:
+- theo như cách làm ở simple & optimal, chúng ta dùng đến 4 lần so sánh điều kiện (if, else) để đưa ra kết quả. 
+- Ở đây, chúng ta dùng 2 lần so sánh điều kiện (if, else), 1 lần dùng toán tử `or` và 1 lần dùng toán tử `+`
+
+--> Có thể là việc dùng `or` và `+` nhanh hơn việc dùng so sánh if, else chăng ?
+
 
